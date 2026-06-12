@@ -8,6 +8,9 @@
   "include": ["src/**/*.ts"],
   "references": [
     {
+      "path": "../blocks/evoCrm"
+    },
+    {
       "path": "../blocks/gmail/tsconfig.lib.json"
     },
     {

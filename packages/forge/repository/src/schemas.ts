@@ -38,6 +38,8 @@ import { togetherAiBlockSchema } from "@typebot.io/together-ai-block/schemas";
 import { zendeskBlock } from "@typebot.io/zendesk-block";
 import { zendeskBlockSchema } from "@typebot.io/zendesk-block/schemas";
 import { z } from "zod";
+import { evoCrmBlock } from '@typebot.io/evo-crm-block'
+import { evoCrmBlockSchema } from '@typebot.io/evo-crm-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -59,7 +61,7 @@ export const forgedBlockSchemas = {
   [deepSeekBlock.id]: deepSeekBlockSchema,
   [blinkBlock.id]: blinkBlockSchema,
   [gmailBlock.id]: gmailBlockSchema,
-} as const;
+[evoCrmBlock.id]: evoCrmBlockSchema,} as const;
 
 export const forgedBlockSchema = z.discriminatedUnion("type", [
   openAIBlockSchema,
@@ -81,5 +83,5 @@ export const forgedBlockSchema = z.discriminatedUnion("type", [
   deepSeekBlockSchema,
   blinkBlockSchema,
   gmailBlockSchema,
-]);
+evoCrmBlockSchema]);
 export type ForgedBlock = z.infer<typeof forgedBlockSchema>;

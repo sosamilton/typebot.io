@@ -33,6 +33,9 @@ import { togetherAiBlock } from "@typebot.io/together-ai-block";
 import { togetherAiCredentialsSchema } from "@typebot.io/together-ai-block/schemas";
 import { zendeskBlock } from "@typebot.io/zendesk-block";
 import { zendeskCredentialsSchema } from "@typebot.io/zendesk-block/schemas";
+import { evoCrmBlock } from '@typebot.io/evo-crm-block'
+import { evoCrmCredentialsSchema } from '@typebot.io/evo-crm-block/schemas'
+
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -52,4 +55,6 @@ export const forgedCredentialsSchemas = {
   [deepSeekBlock.id]: deepSeekCredentialsSchema,
   [blinkBlock.id]: blinkCredentialsSchema,
   [gmailBlock.id]: gmailCredentialsSchema,
+  [evoCrmBlock.id]: evoCrmCredentialsSchema,
+
 };
