@@ -29,7 +29,9 @@ export const updateContactHandler = createActionHandler(updateContact, {
 
     try {
       const { client, apiBaseUrl } = createCrmClient({ baseUrl, apiToken });
-      const response = await client.put(`${apiBaseUrl}/contacts/${contactId}`, { json: body });
+      const response = await client.put(`${apiBaseUrl}/contacts/${contactId}`, {
+        json: body,
+      });
       const responseBody = await response.json();
       if (rawResultVariableId) {
         variables.set([

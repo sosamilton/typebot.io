@@ -28,7 +28,9 @@ export const createLeadHandler = createActionHandler(createLead, {
 
     try {
       const { client, host } = createCrmClient({ baseUrl, apiToken });
-      const response = await client.post(`${host}/public/api/v1/leads`, { json: body });
+      const response = await client.post(`${host}/public/api/v1/leads`, {
+        json: body,
+      });
       const responseBody = await response.json();
       if (rawResultVariableId) {
         variables.set([

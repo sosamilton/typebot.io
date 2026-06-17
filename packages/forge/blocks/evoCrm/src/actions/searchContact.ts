@@ -51,7 +51,7 @@ export const searchContact = createAction({
   }),
   getSetVariableIds: ({ responseMapping, rawResultVariableId }) =>
     [
-      ...responseMapping?.map((r) => r.variableId).filter(isDefined) ?? [],
+      ...(responseMapping?.map((r) => r.variableId).filter(isDefined) ?? []),
       rawResultVariableId,
     ].filter(isDefined),
 });

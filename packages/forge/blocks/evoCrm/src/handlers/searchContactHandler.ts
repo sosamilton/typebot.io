@@ -27,7 +27,7 @@ export const searchContactHandler = createActionHandler(searchContact, {
         .json<SearchContactResponse>();
 
       const raw = response.data ?? response.payload ?? [];
-      const contacts = Array.isArray(raw) ? raw : raw?.payload ?? [];
+      const contacts = Array.isArray(raw) ? raw : (raw?.payload ?? []);
       if (rawResultVariableId) {
         variables.set([
           { id: rawResultVariableId, value: JSON.stringify(contacts) },

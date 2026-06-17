@@ -13,6 +13,8 @@ import { difyAiBlock } from "@typebot.io/dify-ai-block";
 import { difyAiBlockSchema } from "@typebot.io/dify-ai-block/schemas";
 import { elevenlabsBlock } from "@typebot.io/elevenlabs-block";
 import { elevenlabsBlockSchema } from "@typebot.io/elevenlabs-block/schemas";
+import { evoCrmBlock } from "@typebot.io/evo-crm-block";
+import { evoCrmBlockSchema } from "@typebot.io/evo-crm-block/schemas";
 import { gmailBlock } from "@typebot.io/gmail-block";
 import { gmailBlockSchema } from "@typebot.io/gmail-block/schemas";
 import { groqBlock } from "@typebot.io/groq-block";
@@ -38,8 +40,6 @@ import { togetherAiBlockSchema } from "@typebot.io/together-ai-block/schemas";
 import { zendeskBlock } from "@typebot.io/zendesk-block";
 import { zendeskBlockSchema } from "@typebot.io/zendesk-block/schemas";
 import { z } from "zod";
-import { evoCrmBlock } from '@typebot.io/evo-crm-block'
-import { evoCrmBlockSchema } from '@typebot.io/evo-crm-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -61,7 +61,8 @@ export const forgedBlockSchemas = {
   [deepSeekBlock.id]: deepSeekBlockSchema,
   [blinkBlock.id]: blinkBlockSchema,
   [gmailBlock.id]: gmailBlockSchema,
-[evoCrmBlock.id]: evoCrmBlockSchema,} as const;
+  [evoCrmBlock.id]: evoCrmBlockSchema,
+} as const;
 
 export const forgedBlockSchema = z.discriminatedUnion("type", [
   openAIBlockSchema,
@@ -83,5 +84,6 @@ export const forgedBlockSchema = z.discriminatedUnion("type", [
   deepSeekBlockSchema,
   blinkBlockSchema,
   gmailBlockSchema,
-evoCrmBlockSchema]);
+  evoCrmBlockSchema,
+]);
 export type ForgedBlock = z.infer<typeof forgedBlockSchema>;

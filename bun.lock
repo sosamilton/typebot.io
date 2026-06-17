@@ -772,6 +772,12 @@
         "@types/react": "^19.2.14",
       },
     },
+    "packages/forge/blocks/evoCrm": {
+      "name": "@typebot.io/evo-crm-block",
+      "dependencies": {
+        "@typebot.io/forge": "workspace:*",
+      },
+    },
     "packages/forge/blocks/gmail": {
       "name": "@typebot.io/gmail-block",
       "dependencies": {
@@ -958,6 +964,7 @@
         "@typebot.io/deepseek-block": "workspace:*",
         "@typebot.io/dify-ai-block": "workspace:*",
         "@typebot.io/elevenlabs-block": "workspace:*",
+        "@typebot.io/evo-crm-block": "workspace:*",
         "@typebot.io/gmail-block": "workspace:*",
         "@typebot.io/groq-block": "workspace:*",
         "@typebot.io/mistral-block": "workspace:*",
@@ -3192,6 +3199,8 @@
     "@typebot.io/env": ["@typebot.io/env@workspace:packages/env"],
 
     "@typebot.io/events": ["@typebot.io/events@workspace:packages/events"],
+
+    "@typebot.io/evo-crm-block": ["@typebot.io/evo-crm-block@workspace:packages/forge/blocks/evoCrm"],
 
     "@typebot.io/feature-flags": ["@typebot.io/feature-flags@workspace:packages/services/feature-flags"],
 

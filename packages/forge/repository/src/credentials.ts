@@ -11,6 +11,8 @@ import { difyAiBlock } from "@typebot.io/dify-ai-block";
 import { difyAiCredentialsSchema } from "@typebot.io/dify-ai-block/schemas";
 import { elevenlabsBlock } from "@typebot.io/elevenlabs-block";
 import { elevenlabsCredentialsSchema } from "@typebot.io/elevenlabs-block/schemas";
+import { evoCrmBlock } from "@typebot.io/evo-crm-block";
+import { evoCrmCredentialsSchema } from "@typebot.io/evo-crm-block/schemas";
 import { gmailBlock } from "@typebot.io/gmail-block";
 import { gmailCredentialsSchema } from "@typebot.io/gmail-block/schemas";
 import { groqBlock } from "@typebot.io/groq-block";
@@ -33,9 +35,6 @@ import { togetherAiBlock } from "@typebot.io/together-ai-block";
 import { togetherAiCredentialsSchema } from "@typebot.io/together-ai-block/schemas";
 import { zendeskBlock } from "@typebot.io/zendesk-block";
 import { zendeskCredentialsSchema } from "@typebot.io/zendesk-block/schemas";
-import { evoCrmBlock } from '@typebot.io/evo-crm-block'
-import { evoCrmCredentialsSchema } from '@typebot.io/evo-crm-block/schemas'
-
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -56,5 +55,4 @@ export const forgedCredentialsSchemas = {
   [blinkBlock.id]: blinkCredentialsSchema,
   [gmailBlock.id]: gmailCredentialsSchema,
   [evoCrmBlock.id]: evoCrmCredentialsSchema,
-
 };

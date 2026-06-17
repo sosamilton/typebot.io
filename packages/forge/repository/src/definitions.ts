@@ -6,6 +6,7 @@ import { chatNodeBlock } from "@typebot.io/chat-node-block";
 import { deepSeekBlock } from "@typebot.io/deepseek-block";
 import { difyAiBlock } from "@typebot.io/dify-ai-block";
 import { elevenlabsBlock } from "@typebot.io/elevenlabs-block";
+import { evoCrmBlock } from "@typebot.io/evo-crm-block";
 import { gmailBlock } from "@typebot.io/gmail-block";
 import { groqBlock } from "@typebot.io/groq-block";
 import { mistralBlock } from "@typebot.io/mistral-block";
@@ -18,8 +19,6 @@ import { qrCodeBlock } from "@typebot.io/qrcode-block";
 import { segmentBlock } from "@typebot.io/segment-block";
 import { togetherAiBlock } from "@typebot.io/together-ai-block";
 import { zendeskBlock } from "@typebot.io/zendesk-block";
-import { evoCrmBlock } from '@typebot.io/evo-crm-block'
-
 
 export const forgedBlocks = {
   [openAIBlock.id]: openAIBlock,
@@ -42,7 +41,6 @@ export const forgedBlocks = {
   [blinkBlock.id]: blinkBlock,
   [gmailBlock.id]: gmailBlock,
   [evoCrmBlock.id]: evoCrmBlock,
-
 };
 export type ForgedBlockDefinition =
   (typeof forgedBlocks)[keyof typeof forgedBlocks];

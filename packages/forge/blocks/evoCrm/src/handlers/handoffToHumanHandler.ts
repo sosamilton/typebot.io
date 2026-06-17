@@ -12,7 +12,14 @@ import {
 export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
   server: async ({
     credentials: { baseUrl, apiToken },
-    options: { conversationId, labels, priority, teamId, assigneeId, rawResultVariableId },
+    options: {
+      conversationId,
+      labels,
+      priority,
+      teamId,
+      assigneeId,
+      rawResultVariableId,
+    },
     variables,
     logs,
   }) => {
@@ -25,7 +32,12 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
       labels?.filter((label): label is string => !!label) ?? [];
     if (cleanLabels.length > 0) {
       try {
-        const response = await addConversationLabels(crm, conversationId, cleanLabels, "merge");
+        const response = await addConversationLabels(
+          crm,
+          conversationId,
+          cleanLabels,
+          "merge",
+        );
         rawResults.push(await response.json());
       } catch (error) {
         logs.add(
@@ -39,7 +51,11 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
 
     if (priority) {
       try {
-        const response = await setConversationPriority(crm, conversationId, priority);
+        const response = await setConversationPriority(
+          crm,
+          conversationId,
+          priority,
+        );
         rawResults.push(await response.json());
       } catch (error) {
         logs.add(
@@ -53,7 +69,10 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
 
     if (assigneeId || teamId) {
       try {
-        const response = await assignConversation(crm, conversationId, { assigneeId, teamId });
+        const response = await assignConversation(crm, conversationId, {
+          assigneeId,
+          teamId,
+        });
         rawResults.push(await response.json());
       } catch (error) {
         logs.add(

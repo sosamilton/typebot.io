@@ -13,6 +13,8 @@ import { difyAiBlock } from "@typebot.io/dify-ai-block";
 import difyAiBlockHandlers from "@typebot.io/dify-ai-block/handlers";
 import { elevenlabsBlock } from "@typebot.io/elevenlabs-block";
 import elevenlabsBlockHandlers from "@typebot.io/elevenlabs-block/handlers";
+import { evoCrmBlock } from "@typebot.io/evo-crm-block";
+import evoCrmBlockHandlers from "@typebot.io/evo-crm-block/handlers";
 import { gmailBlock } from "@typebot.io/gmail-block";
 import gmailBlockHandlers from "@typebot.io/gmail-block/handlers";
 import { groqBlock } from "@typebot.io/groq-block";
@@ -37,9 +39,6 @@ import { togetherAiBlock } from "@typebot.io/together-ai-block";
 import togetherAiBlockHandlers from "@typebot.io/together-ai-block/handlers";
 import { zendeskBlock } from "@typebot.io/zendesk-block";
 import zendeskBlockHandlers from "@typebot.io/zendesk-block/handlers";
-import { evoCrmBlock } from "@typebot.io/evo-crm-block";
-import evoCrmBlockHandlers from "@typebot.io/evo-crm-block/handlers";
-
 
 export const forgedBlockHandlers = {
   [openAIBlock.id]: openAIBlockHandlers,
@@ -62,5 +61,4 @@ export const forgedBlockHandlers = {
   [blinkBlock.id]: blinkBlockHandlers,
   [gmailBlock.id]: gmailBlockHandlers,
   [evoCrmBlock.id]: evoCrmBlockHandlers,
-
 };
