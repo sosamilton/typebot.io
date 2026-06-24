@@ -27,6 +27,10 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
 
     const crm = createCrmClient({ baseUrl, apiToken });
     const rawResults: unknown[] = [];
+    const parseResponseJson = async (r: Response) => {
+      const text = await r.text();
+      return text ? JSON.parse(text) : null;
+    };
 
     const cleanLabels =
       labels?.filter((label): label is string => !!label) ?? [];
@@ -38,7 +42,7 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
           cleanLabels,
           "merge",
         );
-        rawResults.push(await response.json());
+        rawResults.push(await parseResponseJson(response));
       } catch (error) {
         logs.add(
           await parseUnknownError({
@@ -56,7 +60,7 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
           conversationId,
           priority,
         );
-        rawResults.push(await response.json());
+        rawResults.push(await parseResponseJson(response));
       } catch (error) {
         logs.add(
           await parseUnknownError({
@@ -73,7 +77,7 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
           assigneeId,
           teamId,
         });
-        rawResults.push(await response.json());
+        rawResults.push(await parseResponseJson(response));
       } catch (error) {
         logs.add(
           await parseUnknownError({
@@ -86,7 +90,7 @@ export const handoffToHumanHandler = createActionHandler(handoffToHuman, {
 
     try {
       const response = await setConversationStatus(crm, conversationId, "open");
-      rawResults.push(await response.json());
+      rawResults.push(await parseResponseJson(response));
     } catch (error) {
       logs.add(
         await parseUnknownError({
